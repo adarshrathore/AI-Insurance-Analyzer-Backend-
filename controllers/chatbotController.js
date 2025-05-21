@@ -1,11 +1,14 @@
-const { GoogleGenerativeAI } = require("@google/generative-ai");
+import { GoogleGenerativeAI } from "@google/generative-ai";
+
 const genAI = new GoogleGenerativeAI(process.env.GEMINI_API_KEY);
 
-exports.askChatbot = async (req, res) => {
+export const askChatbot = async (req, res) => {
   try {
     const { prompt } = req.body;
 
-    if (!prompt) return res.status(400).json({ error: "Prompt required." });
+    if (!prompt) {
+      return res.status(400).json({ error: "Prompt required." });
+    }
 
     const model = genAI.getGenerativeModel({ model: "gemini-pro" });
 
@@ -24,6 +27,5 @@ User: ${prompt}`
 };
 
 export const handleChatbot = async (req, res) => {
-  // Implement chatbot logic
-  res.status(200).json({ message: 'Chatbot response placeholder' });
+  res.status(200).json({ message: "Chatbot response placeholder" });
 };
