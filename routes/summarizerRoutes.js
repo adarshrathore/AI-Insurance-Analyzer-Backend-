@@ -1,8 +1,9 @@
+// routes/summarizerRoutes.js
 import express from "express";
-import { summarizePDF } from "../controllers/summarizerController.js";
+import { summarizeTextPolicy } from "../controllers/summarizerController.js";
 
 const router = express.Router();
 
-router.post("/summarize", summarizePDF);
+router.post("/summarize", summarizeTextPolicy); // POST /api/summarize
 
 export default router;
