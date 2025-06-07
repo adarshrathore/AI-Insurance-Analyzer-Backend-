@@ -23,3 +23,30 @@
 
 ## 📁 Folder Structure
 
+backend/
+│
+├── controllers/ # Route logic for summarizer, comparator, chatbot, review, auth
+├── models/ # Mongoose schemas (User, Review)
+├── routes/ # All API routes
+├── utils/ # Gemini API handler
+├── .env # API keys and DB config (keep secret!)
+├── server.js # Entry point
+└── package.json # Dependencies
+
+## ⚙️ Installation & Setup
+
+### Prerequisites
+
+- Node.js (v18+)
+- MongoDB (local or Atlas)
+- Gemini API Key from [Google AI Studio](https://makersuite.google.com/)
+
+### Environment Variables (`.env`)
+
+```env
+PORT=3000
+MONGO_URI=your_mongodb_uri
+JWT_SECRET=your_jwt_secret
+GEMINI_API_KEY=your_gemini_api_key
+
+
